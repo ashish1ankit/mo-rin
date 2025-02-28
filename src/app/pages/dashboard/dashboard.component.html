@@ -1,0 +1,14 @@
+<div class="dashboard-container">
+    <button class="action-button"  (click)="toggleSideFilterbar()">Filters</button>
+
+  <div class="sidebar" [class.open]="isSideFilterBarOpen">
+    <button class="close-btn" (click)="toggleSideFilterbar()">×</button>
+    <h3>Filters</h3>
+    <p>Filter options go here...</p>
+
+    <div class="sidebar-footer">
+        <button class="apply-btn">Apply</button>
+        <button class="close-btn" (click)="toggleSideFilterbar()">Close</button>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,85 @@
+.dashboard-container {
+    position: relative;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .action-button {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  
+  .action-button:hover {
+    background-color: rgb(117, 204, 255);
+  }
+  /* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    left: -290px; /* Hidden by default */
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background: white;
+    border-right: 2px solid black;
+    padding: 20px;
+    transition: left 0.3s ease-in-out; /* Smooth animation */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    overflow-x: hidden; /* Prevent unwanted horizontal scrolling */
+    /* display: flex; */
+  flex-direction: column;
+  justify-content: space-between; /* Push buttons to bottom */
+  }
+  
+  .sidebar.open {
+    left: 0; /* Show sidebar */
+  }
+  
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .sidebar-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    margin-top: auto; /* Push to bottom */
+  }
+  
+  .apply-btn, .close-btn {
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid black;
+    background: white;
+  }
+  
+  .apply-btn:hover {
+    background: green;
+    color: white;
+  }
+  
+  .close-btn:hover {
+    background: red;
+    color: white;
+  }
+  

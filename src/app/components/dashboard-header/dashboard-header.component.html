@@ -1,0 +1,10 @@
+<div class="dashboard-header">
+    <h2>{{ title }}</h2>
+    <div class="dashboard-info">
+      <div *ngFor="let item of infoList" class="info-item">
+        <span>{{ item.label }}:</span>
+        <strong>{{ item.value }}</strong>
+      </div>
+    </div>
+  </div>
+  

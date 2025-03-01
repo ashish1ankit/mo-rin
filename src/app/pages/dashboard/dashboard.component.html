@@ -1,14 +1,31 @@
+<app-dashboard-header 
+  [title]="'Dashboard Overview'"
+  [infoList]="dashboardData">
+</app-dashboard-header>
 <div class="dashboard-container">
-    <button class="action-button"  (click)="toggleSideFilterbar()">Filters</button>
+  <!-- <div class="dashboard-cards"> -->
+    <!-- <app-card *ngFor="let card of cards" [title]="card.title" [chartId]="card.id"></app-card> -->
+  <!-- </div> -->
+  <button class="action-button" (click)="toggleSideFilterbar()">Filters</button>
 
   <div class="sidebar" [class.open]="isSideFilterBarOpen">
-    <button class="close-btn" (click)="toggleSideFilterbar()">×</button>
     <h3>Filters</h3>
-    <p>Filter options go here...</p>
+
+    <div *ngFor="let filter of filters" class="filter-section">
+      <div class="filter-header" (click)="toggleFilter(filter)">
+        <span class="filter-label">{{ filter.name }}</span>
+        <span class="arrow">{{ filter.open ? '▲' : '▼' }}</span>
+      </div>
+      
+      <!-- Filter content will now appear directly below each filter -->
+      <div class="filter-content" *ngIf="filter.open">
+        <p>Content for {{ filter.name }}</p>
+      </div>
+    </div>
 
     <div class="sidebar-footer">
-        <button class="apply-btn">Apply</button>
-        <button class="close-btn" (click)="toggleSideFilterbar()">Close</button>
-      </div>
+      <button class="apply-btn">Apply</button>
+      <button class="bottom-close-btn" (click)="toggleSideFilterbar()">Close</button>
+    </div>
   </div>
 </div>

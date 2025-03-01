@@ -29,57 +29,139 @@
     background-color: rgb(117, 204, 255);
   }
   /* Sidebar Styles */
+/* Sidebar Styles */
 .sidebar {
-    position: fixed;
-    left: -290px; /* Hidden by default */
-    top: 0;
-    width: 250px;
-    height: 100%;
-    background: white;
-    border-right: 2px solid black;
-    padding: 20px;
-    transition: left 0.3s ease-in-out; /* Smooth animation */
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-    overflow-x: hidden; /* Prevent unwanted horizontal scrolling */
-    /* display: flex; */
+  position: fixed;
+  left: -290px;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background: white;
+  border-right: 2px solid black;
+  padding: 20px;
+  transition: left 0.3s ease-in-out;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  /* display: flex; */
   flex-direction: column;
-  justify-content: space-between; /* Push buttons to bottom */
+  justify-content: space-between;
+  flex-grow: 1;
+}
+.filter-label {
+  display: block; /* Ensures it takes full width */
+  font-size: 16px;
+  font-weight: bold;
+  padding-bottom: 5px; /* Space between text and underline */
+  /* border-bottom: 2px solid black; Creates the underline */
+  width: 100%; /* Makes the underline extend fully */
+}
+.sidebar.open {
+  left: 0;
+}
+
+/* Close Button */
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* Filter Sections */
+.sidebar-header .close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.arrow {
+  font-size: 14px;
+}
+.filter-section {
+  display: flex;
+  justify-content: space-between; /* Ensures name & arrow are on the same line */
+  align-items: center;
+  padding: 10px 0;
+  cursor: pointer;
+  border-bottom: 2px solid black; /* Adds underline */
+  font-size: 16px;
+  font-weight: bold;
+}
+/* Hidden Content */
+.filter-content {
+  padding: 10px;
+  background: #f0f0f0;
+  border-left: 2px solid black;
+}
+
+/* Footer Buttons */
+.sidebar-footer {
+  /* display: flex; */
+  justify-content: space-between;
+  padding: 10px 0;
+  gap: 10px; 
+  margin-top: auto;
+}
+
+.apply-btn, .bottom-close-btn {
+  padding: 10px 15px;
+  font-size: 16px;
+  flex: 1; 
+  margin-right: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid black;
+  background: white;
+  width: 48%; /* Equal size for both buttons */
+  text-align: center;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.apply-btn:hover {
+  background: green;
+  color: white;
+}
+
+.bottom-close-btn:hover {
+  background: red;
+  color: white;
+}
+.dashboard-container {
+  padding: 40px;
+}
+
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 20px;
+  gap: 30px;
+}
+
+.card {
+  background: white;
+  border: 2px solid black;
+  padding: 30px;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  transition: 0.3s;
+
+  &:hover {
+    transform: scale(1.05);
   }
-  
-  .sidebar.open {
-    left: 0; /* Show sidebar */
-  }
-  
-  .close-btn {
-    background: none;
-    border: none;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  .sidebar-footer {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 0;
-    margin-top: auto; /* Push to bottom */
-  }
-  
-  .apply-btn, .close-btn {
-    padding: 10px 15px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    border: 1px solid black;
-    background: white;
-  }
-  
-  .apply-btn:hover {
-    background: green;
-    color: white;
-  }
-  
-  .close-btn:hover {
-    background: red;
-    color: white;
-  }
-  
+}

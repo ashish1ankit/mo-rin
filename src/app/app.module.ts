@@ -10,6 +10,8 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { MasterComponent } from './pages/master/master.component';
 import { CardsComponent } from './pages/cards/cards.component';
 import { DoComponent } from './pages/do/do.component';
+import { DashboardHeaderComponent } from './components/dashboard-header/dashboard-header.component';
+import { DashboardCardComponent } from './components/shared/dashboard-card/dashboard-card.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +22,11 @@ import { DoComponent } from './pages/do/do.component';
     DashboardComponent,
     MasterComponent,
     CardsComponent,
-    DoComponent
+    DoComponent,
+    DashboardHeaderComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
